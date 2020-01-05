@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Human;
-
 /**
  * Servlet implementation class SampleServlet
  */
@@ -24,16 +22,6 @@ public class SampleServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// リクエストスコープに保存するインスタンス生成
-		Human human = new Human("湊祐介", 23);
-
-		// リクエストスコープにインスタンスの生成
-		request.setAttribute("human", human);	// 属性を示す
-
-		// リクエストスコープからインスタンスを取得
-		Human h = (Human) request.getAttribute("human");	// 引数には属性を指定
-
 
 		// 運勢をランダムで決定
 		String[] luckArray = {"超スッキリ",  "スッキリ", "最悪"};
